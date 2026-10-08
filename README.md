@@ -35,7 +35,7 @@ The paths below assume `~/Documents/ardu_ws`, which matches the launch commands.
 mkdir -p ~/Documents && cd ~/Documents
 git clone https://github.com/Flippigan/ardu_ws.git
 cd ardu_ws
-vcs import --recursive src < workspace.repos
+vcs import --recursive < workspace.repos
 ```
 
 > `dbvf_autonomy` and `formation_msgs` are **private** repos. If you weren't given access, `vcs import` reports an error for those two and continues with the rest. Neither is needed for the sim + circle detector steps below.

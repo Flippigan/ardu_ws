@@ -2,7 +2,7 @@
 # Each repo is pinned to a commit hash. Where the snapshot included local/uncommitted
 # work, that commit lives on a branch named share/2026-10-08 in the Flippigan fork.
 #
-# Import with:  vcs import --recursive src < workspace.repos
+# Import with:  vcs import --recursive < workspace.repos
 repositories:
   src/apriltag_msgs:
     type: git
