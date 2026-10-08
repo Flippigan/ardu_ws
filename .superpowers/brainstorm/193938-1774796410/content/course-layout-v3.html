@@ -1,0 +1,116 @@
+<h2>DBVF Competition Course Layout (v3)</h2>
+<p class="subtitle">WA/WM straddle the main axis — midpoint on the centerline</p>
+
+<div class="section">
+  <h3>Course Top-Down View (Not to Scale)</h3>
+  <div style="background: #1a2a1a; border-radius: 12px; padding: 30px; overflow-x: auto;">
+    <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:900px; height:auto;">
+      <!-- Background field -->
+      <rect x="0" y="0" width="900" height="480" fill="#2d4a2d" rx="8"/>
+
+      <!-- Main east-west axis line (dashed) -->
+      <line x1="40" y1="280" x2="860" y2="280" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8,6"/>
+
+      <!-- === ZONES === -->
+
+      <!-- H (Home) - 15x15 ft - on main axis, rightmost -->
+      <rect x="790" y="260" width="40" height="40" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="810" y="285" text-anchor="middle" fill="white" font-size="16" font-weight="bold">H</text>
+      <text x="810" y="315" text-anchor="middle" fill="#aaa" font-size="10">15×15 ft</text>
+      <text x="810" y="328" text-anchor="middle" fill="#aaa" font-size="9">Home</text>
+
+      <!-- Distance H to WA/WM center: 150ft -->
+      <line x1="670" y1="295" x2="790" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="730" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">150 ft</text>
+
+      <!-- WM (Water Manual) - 20x20 ft - 15ft NORTH of axis -->
+      <rect x="620" y="215" width="50" height="50" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="645" y="245" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">WM</text>
+      <text x="645" y="210" text-anchor="middle" fill="#66bbff" font-size="9">Blue Pickup</text>
+      <text x="695" y="245" text-anchor="start" fill="#aaa" font-size="9">20×20</text>
+
+      <!-- WA (Water Autonomous) - 20x20 ft - 15ft SOUTH of axis -->
+      <rect x="620" y="295" width="50" height="50" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="645" y="325" text-anchor="middle" fill="white" font-size="14" font-weight="bold">WA</text>
+      <text x="645" y="358" text-anchor="middle" fill="#ffdd00" font-size="9">Yellow Pickup</text>
+      <text x="695" y="325" text-anchor="start" fill="#aaa" font-size="9">20×20</text>
+
+      <!-- 30ft bracket between WM and WA -->
+      <line x1="610" y1="265" x2="610" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <line x1="605" y1="265" x2="615" y2="265" stroke="#ffaa00" stroke-width="1.5"/>
+      <line x1="605" y1="295" x2="615" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="598" y="283" text-anchor="end" fill="#ffaa00" font-size="10">30 ft</text>
+
+      <!-- Midpoint dot on axis -->
+      <circle cx="645" cy="280" r="3" fill="#ffaa00"/>
+      <text x="645" y="275" text-anchor="middle" fill="#ffaa0088" font-size="8">midpoint</text>
+
+      <!-- Distance WA/WM to L: 150ft -->
+      <line x1="460" y1="295" x2="620" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="540" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">150 ft</text>
+
+      <!-- L (Landing) - 15x15 ft - on main axis -->
+      <rect x="420" y="260" width="40" height="40" fill="none" stroke="#4488ff" stroke-width="3" rx="3"/>
+      <text x="440" y="285" text-anchor="middle" fill="#4488ff" font-size="16" font-weight="bold">L</text>
+      <text x="440" y="315" text-anchor="middle" fill="#aaa" font-size="10">15×15 ft</text>
+      <text x="440" y="328" text-anchor="middle" fill="#88aaff" font-size="9">Precision Land</text>
+
+      <!-- Distance L to F1: 100ft -->
+      <line x1="320" y1="295" x2="420" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="370" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">100 ft</text>
+
+      <!-- F1 (Fire 1) - 7x7 ft - on main axis -->
+      <rect x="287" y="265" width="33" height="33" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="303" y="286" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">F1</text>
+      <text x="303" y="312" text-anchor="middle" fill="#aaa" font-size="10">7×7 ft</text>
+      <text x="303" y="325" text-anchor="middle" fill="#aaa" font-size="9">2.5 pts/drop</text>
+
+      <!-- Distance F1 to F2: 100ft -->
+      <line x1="180" y1="295" x2="287" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="233" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">100 ft</text>
+
+      <!-- F2 (Fire 2) - 3x3 ft - on main axis -->
+      <rect x="155" y="272" width="15" height="15" fill="none" stroke="#ff4444" stroke-width="2" rx="2"/>
+      <text x="162" y="283" text-anchor="middle" fill="#ff4444" font-size="10" font-weight="bold">F2</text>
+      <text x="162" y="302" text-anchor="middle" fill="#aaa" font-size="10">3×3 ft</text>
+      <text x="162" y="315" text-anchor="middle" fill="#aaa" font-size="9">5 pts/drop</text>
+
+      <!-- Ground Zone 1 - 100ft north of WM -->
+      <line x1="645" y1="215" x2="645" y2="100" stroke="#ffffff33" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="665" y="160" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft</text>
+      <circle cx="645" cy="75" r="20" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="645" y="80" text-anchor="middle" fill="#888" font-size="14" font-weight="bold">1</text>
+      <text x="645" y="107" text-anchor="middle" fill="#666" font-size="9">Ground Zone</text>
+
+      <!-- Ground Zone 2 - 100ft north of F1 -->
+      <line x1="303" y1="265" x2="303" y2="100" stroke="#ffffff33" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="323" y="185" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft</text>
+      <circle cx="303" cy="75" r="20" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="303" y="80" text-anchor="middle" fill="#888" font-size="14" font-weight="bold">2</text>
+      <text x="303" y="107" text-anchor="middle" fill="#666" font-size="9">Ground Zone</text>
+
+      <!-- Flight path annotation -->
+      <g>
+        <text x="450" y="410" text-anchor="middle" fill="#ffffff66" font-size="12" font-style="italic">← West · · · Main Course Axis · · · East →</text>
+        <text x="450" y="430" text-anchor="middle" fill="#ffffff44" font-size="11">Total course length: ~600 ft (~183 m)</text>
+      </g>
+
+      <!-- North arrow -->
+      <g transform="translate(860, 40)">
+        <line x1="0" y1="20" x2="0" y2="-15" stroke="white" stroke-width="2"/>
+        <polygon points="-5,0 0,-15 5,0" fill="white"/>
+        <text x="0" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">N</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Layout Key Points</h3>
+  <ul style="color:#ccc; line-height:1.8;">
+    <li>All zones except WA/WM are centered on the main east-west axis</li>
+    <li>WM and WA are stacked north-south, 30ft apart, with their <strong style="color:#ffaa00;">midpoint on the axis</strong></li>
+    <li>WM (blue/manual pickup) is 15ft north of axis; WA (yellow/autonomous pickup) is 15ft south</li>
+    <li>Ground zones 1 and 2 are 100ft north of WM and F1 respectively — team member positions</li>
+  </ul>
+</div>

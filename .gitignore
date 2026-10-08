@@ -1,0 +1,16 @@
+# Every package under src/ is its own git repo, pulled in by workspace.repos
+src/*
+!src/workspace_setup_notes.md
+
+# Build artifacts
+build/
+install/
+log/
+logs/
+
+# SITL / MAVProxy runtime output
+*.tlog
+*.tlog.raw
+mav.parm
+eeprom.bin
+__pycache__/

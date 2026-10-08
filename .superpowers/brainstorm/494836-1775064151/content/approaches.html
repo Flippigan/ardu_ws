@@ -1,0 +1,66 @@
+<h2>Orin Nano ↔ Cube Orange Integration: Approaches</h2>
+<p class="subtitle">How to structure the serial connection and camera pipeline on the Orin Nano</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Direct Serial — Minimal Change</h3>
+      <p><strong>Connection:</strong> pymavlink opens <code>/dev/ttyTHS1</code> directly at 921600 baud. Your mavlink_interface_node switches between TCP (sim) and serial (real) based on <code>hardware_params.yaml</code>.</p>
+      <p><strong>Camera:</strong> Use <code>nvarguscamerasrc</code> via a GStreamer-based ROS2 camera node to publish to the same <code>/camera/image</code> topic the sim uses.</p>
+      <p><strong>Pros:</strong> Fewest moving parts. No extra daemons. Lowest memory footprint (critical for 4GB).</p>
+      <p><strong>Cons:</strong> Only one process can own the serial port — no QGC on a separate laptop unless you add a MAVLink router later. Single point of failure on the serial link.</p>
+      <p><strong>Best for:</strong> Getting flying fast with minimum complexity.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>MAVLink Router — Shared Link</h3>
+      <p><strong>Connection:</strong> Run <code>mavlink-routerd</code> on the Orin. It owns <code>/dev/ttyTHS1</code> and exposes UDP endpoints. Your mavlink_interface_node connects via UDP localhost (same as it would in sim, just different address). QGC on a laptop can also connect over WiFi/Ethernet.</p>
+      <p><strong>Camera:</strong> Same as A — <code>nvarguscamerasrc</code> via ROS2 camera node.</p>
+      <p><strong>Pros:</strong> GCS operator sees live telemetry alongside autonomous operation. Familiar TCP/UDP connection for your node. Adds ~2MB RAM overhead.</p>
+      <p><strong>Cons:</strong> Extra daemon to manage. Slightly more latency on MAVLink (negligible in practice). One more thing that can fail.</p>
+      <p><strong>Best for:</strong> Competition day — your GCS operator needs telemetry access simultaneously.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid — Direct Serial Now, Router Ready</h3>
+      <p><strong>Connection:</strong> Implement direct serial in mavlink_interface_node (Approach A). Also add a <code>connection_type</code> field in hardware_params.yaml that supports <code>tcp</code>, <code>serial</code>, and <code>udp</code>. When you need QGC access later, drop in mavlink-routerd and switch to UDP — no code changes.</p>
+      <p><strong>Camera:</strong> Same — <code>nvarguscamerasrc</code> via ROS2 camera node.</p>
+      <p><strong>Pros:</strong> Fly and test immediately with serial. Upgrade to router when needed without touching your node code. Maximum flexibility.</p>
+      <p><strong>Cons:</strong> Slightly more config parameters upfront. Need to test both serial and UDP paths.</p>
+      <p style="color: #4ade80; font-weight: bold;">⟵ Recommended</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 2rem; padding: 1.2rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+  <h3>Common to All Approaches</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 0.5rem; font-weight: bold; width: 30%;">Physical Wiring</td>
+      <td style="padding: 0.5rem;">Cube Orange TELEM2 TX/RX/GND → Orin Nano UART1 (J12 header pins 8/10/GND). 3.3V logic on both sides — no level shifter needed.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 0.5rem; font-weight: bold;">TELEM2 Params</td>
+      <td style="padding: 0.5rem;"><code>SERIAL2_BAUD=921</code>, <code>SERIAL2_PROTOCOL=2</code> (MAVLink2)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 0.5rem; font-weight: bold;">Orin UART Setup</td>
+      <td style="padding: 0.5rem;"><code>sudo systemctl stop nvgetty</code>, <code>sudo usermod -aG dialout $USER</code>, device appears as <code>/dev/ttyTHS1</code></td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 0.5rem; font-weight: bold;">Camera</td>
+      <td style="padding: 0.5rem;">Arducam IMX219 via CSI → <code>nvarguscamerasrc</code> (hardware ISP) → ROS2 <code>image_transport</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem; font-weight: bold;">Memory Budget (4GB)</td>
+      <td style="padding: 0.5rem;">~600MB JetPack overhead + ~400MB ROS2/nodes + ~200MB camera pipeline + ~100MB apriltag = ~1.3GB. Leaves ~2.7GB headroom.</td>
+    </tr>
+  </table>
+</div>

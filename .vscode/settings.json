@@ -1,0 +1,11 @@
+{
+    "git.repositoryScanMaxDepth": 10,
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": "openEditors",
+    "scm.repositories.visible": 15,
+    "Lua.diagnostics.disable": [
+        "duplicate-doc-field",
+        "undefined-global",
+        "param-type-mismatch"
+    ]
+}

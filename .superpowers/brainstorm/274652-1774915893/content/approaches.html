@@ -1,0 +1,86 @@
+<h2>RC Mission Control — Architecture Approaches</h2>
+<p class="subtitle">How should the Orin read RC channel switches and trigger mission commands?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>mavlink_interface_node reads RC_CHANNELS directly</h3>
+      <p>Add RC channel monitoring to the existing mavlink_interface_node. It already owns the pymavlink connection, so it can read <code>RC_CHANNELS</code> messages and call the StartMission/ResumeMission services internally when channels 14/15 cross a threshold (e.g., PWM > 1700).</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>No new nodes — minimal code change</li>
+            <li>mavlink_interface already has the pymavlink connection</li>
+            <li>Single source of truth for all MAVLink interaction</li>
+            <li>RC channels are broadcast at high rate (~50Hz) by ArduPilot</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Adds responsibility to an already busy node</li>
+            <li>mavlink_interface becomes aware of mission concepts (start/resume)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>New rc_mission_trigger_node</h3>
+      <p>A small, dedicated node that subscribes to a new <code>/dbvf/rc_channels</code> topic (published by mavlink_interface) and watches channels 14/15. When triggered, it calls the existing ROS2 services (<code>/dbvf/start_mission</code>, <code>/dbvf/resume_mission</code>).</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Clean separation of concerns</li>
+            <li>mavlink_interface stays MAVLink-only</li>
+            <li>Easy to test the trigger logic independently</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>New node + new topic = more moving parts</li>
+            <li>Requires mavlink_interface to publish RC channels (new topic)</li>
+            <li>Extra hop adds small latency (negligible in practice)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>mission_sequencer_node reads RC directly via pymavlink</h3>
+      <p>Give the mission sequencer its own secondary pymavlink connection (read-only) to monitor RC channels, keeping the trigger logic in the same node that manages mission state.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Trigger logic lives next to mission logic</li>
+            <li>No cross-node service calls needed</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Breaks the "single pymavlink owner" pattern</li>
+            <li>Second MAVLink connection adds complexity</li>
+            <li>Goes against existing architecture decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 2rem; padding: 1.5rem; background: rgba(59, 130, 246, 0.08); border-radius: 12px; border-left: 4px solid #3b82f6;">
+  <h3 style="margin-top: 0;">Recommendation: Option A</h3>
+  <p>The mavlink_interface_node already reads every MAVLink message from the Cube Orange. Adding a check for <code>RC_CHANNELS</code> is ~30 lines of code. The "added responsibility" concern is minor — it's just edge-detecting two channels and calling two services. No new nodes, no new topics, no architectural changes.</p>
+</div>

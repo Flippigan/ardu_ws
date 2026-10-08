@@ -1,0 +1,199 @@
+<h2>DBVF Competition Course Layout</h2>
+<p class="subtitle">Verify this matches your understanding from the RFP and image before we proceed</p>
+
+<div class="section">
+  <h3>Course Top-Down View (Not to Scale)</h3>
+  <div style="background: #1a2a1a; border-radius: 12px; padding: 30px; overflow-x: auto;">
+    <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:900px; height:auto;">
+      <!-- Background field -->
+      <rect x="0" y="0" width="900" height="450" fill="#2d4a2d" rx="8"/>
+
+      <!-- Grid lines for reference -->
+      <g stroke="#3a5a3a" stroke-width="0.5" stroke-dasharray="4,4">
+        <line x1="0" y1="225" x2="900" y2="225"/>
+        <line x1="450" y1="0" x2="450" y2="450"/>
+      </g>
+
+      <!-- Main axis line (dashed) -->
+      <line x1="60" y1="280" x2="840" y2="280" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8,6"/>
+
+      <!-- === ZONES === -->
+
+      <!-- H (Home) - 15x15 ft - rightmost -->
+      <rect x="790" y="260" width="40" height="40" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="810" y="285" text-anchor="middle" fill="white" font-size="16" font-weight="bold">H</text>
+      <text x="810" y="315" text-anchor="middle" fill="#aaa" font-size="10">15×15 ft</text>
+      <text x="810" y="328" text-anchor="middle" fill="#aaa" font-size="9">Home</text>
+
+      <!-- Distance H to WA -->
+      <line x1="660" y1="295" x2="790" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="725" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">150 ft</text>
+
+      <!-- WA (Water Autonomous) - 20x20 ft -->
+      <rect x="610" y="260" width="50" height="50" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="635" y="290" text-anchor="middle" fill="white" font-size="14" font-weight="bold">WA</text>
+      <text x="635" y="325" text-anchor="middle" fill="#aaa" font-size="10">20×20 ft</text>
+      <text x="635" y="338" text-anchor="middle" fill="#ffdd00" font-size="9">Yellow Pickup</text>
+
+      <!-- Distance WA to L -->
+      <line x1="450" y1="295" x2="610" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="530" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">150 ft</text>
+
+      <!-- L (Landing) - 15x15 ft -->
+      <rect x="410" y="260" width="40" height="40" fill="none" stroke="#4488ff" stroke-width="3" rx="3"/>
+      <text x="430" y="285" text-anchor="middle" fill="#4488ff" font-size="16" font-weight="bold">L</text>
+      <text x="430" y="315" text-anchor="middle" fill="#aaa" font-size="10">15×15 ft</text>
+      <text x="430" y="328" text-anchor="middle" fill="#88aaff" font-size="9">Precision Land</text>
+
+      <!-- WM (Water Manual) - 20x20 ft - offset 30ft north of L -->
+      <line x1="430" y1="260" x2="480" y2="200" stroke="#ffffff55" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="465" y="235" text-anchor="middle" fill="#ffaa00" font-size="10">30 ft</text>
+      <rect x="455" y="170" width="50" height="50" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="480" y="200" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">WM</text>
+      <text x="480" y="232" text-anchor="middle" fill="#aaa" font-size="10">20×20 ft</text>
+      <text x="480" y="245" text-anchor="middle" fill="#66bbff" font-size="9">Blue Pickup</text>
+
+      <!-- Distance L to F1 -->
+      <line x1="310" y1="295" x2="410" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="360" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">100 ft</text>
+
+      <!-- F1 (Fire 1) - 7x7 ft -->
+      <rect x="277" y="265" width="33" height="33" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="293" y="286" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">F1</text>
+      <text x="293" y="312" text-anchor="middle" fill="#aaa" font-size="10">7×7 ft</text>
+      <text x="293" y="325" text-anchor="middle" fill="#aaa" font-size="9">2.5 pts/drop</text>
+
+      <!-- Distance F1 to F2 -->
+      <line x1="170" y1="295" x2="277" y2="295" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="223" y="310" text-anchor="middle" fill="#ffaa00" font-size="11">100 ft</text>
+
+      <!-- F2 (Fire 2) - 3x3 ft -->
+      <rect x="155" y="270" width="15" height="15" fill="none" stroke="#ff4444" stroke-width="2" rx="2"/>
+      <text x="162" y="282" text-anchor="middle" fill="#ff4444" font-size="10" font-weight="bold">F2</text>
+      <text x="162" y="300" text-anchor="middle" fill="#aaa" font-size="10">3×3 ft</text>
+      <text x="162" y="313" text-anchor="middle" fill="#aaa" font-size="9">5 pts/drop</text>
+
+      <!-- Ground Zone 1 - 100ft north of WM -->
+      <line x1="480" y1="170" x2="530" y2="80" stroke="#ffffff33" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="515" y="130" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft</text>
+      <circle cx="530" cy="60" r="20" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="530" y="65" text-anchor="middle" fill="#888" font-size="14" font-weight="bold">1</text>
+      <text x="530" y="92" text-anchor="middle" fill="#666" font-size="9">Ground Zone</text>
+
+      <!-- Ground Zone 2 - 100ft north of F1 area -->
+      <line x1="293" y1="265" x2="330" y2="80" stroke="#ffffff33" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="322" y="175" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft</text>
+      <circle cx="330" cy="60" r="20" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="330" y="65" text-anchor="middle" fill="#888" font-size="14" font-weight="bold">2</text>
+      <text x="330" y="92" text-anchor="middle" fill="#666" font-size="9">Ground Zone</text>
+
+      <!-- Legend -->
+      <rect x="20" y="370" width="860" height="65" fill="#1a2a1a" rx="6"/>
+      <text x="40" y="392" fill="#888" font-size="11" font-weight="bold">LEGEND:</text>
+      <rect x="40" y="400" width="12" height="12" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <text x="58" y="411" fill="#aaa" font-size="10">Takeoff/Land zones</text>
+      <rect x="180" y="400" width="12" height="12" fill="none" stroke="#44cc44" stroke-width="1.5"/>
+      <text x="198" y="411" fill="#aaa" font-size="10">Drop zones (F1/F2)</text>
+      <rect x="340" y="400" width="12" height="12" fill="none" stroke="#4488ff" stroke-width="1.5"/>
+      <text x="358" y="411" fill="#aaa" font-size="10">Precision landing (L)</text>
+      <text x="510" y="411" fill="#ffdd00" font-size="10">● Yellow = autonomous pickup</text>
+      <text x="700" y="411" fill="#66bbff" font-size="10">● Blue = manual pickup</text>
+
+      <!-- North arrow -->
+      <g transform="translate(860, 40)">
+        <line x1="0" y1="20" x2="0" y2="-15" stroke="white" stroke-width="2"/>
+        <polygon points="-5,0 0,-15 5,0" fill="white"/>
+        <text x="0" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">N</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Key Distances Summary</h3>
+  <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+    <tr style="border-bottom: 1px solid #333;">
+      <th style="text-align:left; padding:8px; color:#aaa;">From → To</th>
+      <th style="text-align:right; padding:8px; color:#aaa;">Distance</th>
+      <th style="text-align:right; padding:8px; color:#aaa;">Meters</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">H → WA</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00;">150 ft</td>
+      <td style="text-align:right; padding:8px; color:#888;">~45.7 m</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">WA → L</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00;">150 ft</td>
+      <td style="text-align:right; padding:8px; color:#888;">~45.7 m</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">L → WM (offset N)</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00;">30 ft</td>
+      <td style="text-align:right; padding:8px; color:#888;">~9.1 m</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">L → F1</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00;">100 ft</td>
+      <td style="text-align:right; padding:8px; color:#888;">~30.5 m</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">F1 → F2</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00;">100 ft</td>
+      <td style="text-align:right; padding:8px; color:#888;">~30.5 m</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; font-weight:bold;">Total course length</td>
+      <td style="text-align:right; padding:8px; color:#ffaa00; font-weight:bold;">~600 ft</td>
+      <td style="text-align:right; padding:8px; color:#888; font-weight:bold;">~183 m</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>Zone Sizes</h3>
+  <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+    <tr style="border-bottom: 1px solid #333;">
+      <th style="text-align:left; padding:8px; color:#aaa;">Zone</th>
+      <th style="text-align:right; padding:8px; color:#aaa;">Size (ft)</th>
+      <th style="text-align:right; padding:8px; color:#aaa;">Size (m)</th>
+      <th style="text-align:left; padding:8px; color:#aaa;">Purpose</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">H (Home)</td>
+      <td style="text-align:right; padding:8px;">15 × 15</td>
+      <td style="text-align:right; padding:8px; color:#888;">4.57 × 4.57</td>
+      <td style="padding:8px;">Takeoff / Return landing</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">WA (Water Auto)</td>
+      <td style="text-align:right; padding:8px;">20 × 20</td>
+      <td style="text-align:right; padding:8px; color:#888;">6.10 × 6.10</td>
+      <td style="padding:8px;">Yellow payload pickup (autonomous)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px;">WM (Water Manual)</td>
+      <td style="text-align:right; padding:8px;">20 × 20</td>
+      <td style="text-align:right; padding:8px; color:#888;">6.10 × 6.10</td>
+      <td style="padding:8px;">Blue payload pickup (manual/auto)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px; color:#4488ff;">L (Landing)</td>
+      <td style="text-align:right; padding:8px;">15 × 15</td>
+      <td style="text-align:right; padding:8px; color:#888;">4.57 × 4.57</td>
+      <td style="padding:8px;">FM-1 precision landing target</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #222;">
+      <td style="padding:8px; color:#44cc44;">F1 (Fire 1)</td>
+      <td style="text-align:right; padding:8px;">7 × 7</td>
+      <td style="text-align:right; padding:8px; color:#888;">2.13 × 2.13</td>
+      <td style="padding:8px;">Drop zone (2.5 pts/payload)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; color:#ff4444;">F2 (Fire 2)</td>
+      <td style="text-align:right; padding:8px;">3 × 3</td>
+      <td style="text-align:right; padding:8px; color:#888;">0.91 × 0.91</td>
+      <td style="padding:8px;">Drop zone (5 pts/payload)</td>
+    </tr>
+  </table>
+</div>

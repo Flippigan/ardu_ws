@@ -1,0 +1,4 @@
+{"type":"server-started","port":53013,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:53013","screen_dir":"/home/finn/Documents/ardu_ws/.superpowers/brainstorm/280377-1774916307/content","state_dir":"/home/finn/Documents/ardu_ws/.superpowers/brainstorm/280377-1774916307/state"}
+{"type":"screen-added","file":"/home/finn/Documents/ardu_ws/.superpowers/brainstorm/280377-1774916307/content/course-layout-v4.html"}
+{"type":"screen-added","file":"/home/finn/Documents/ardu_ws/.superpowers/brainstorm/280377-1774916307/content/full-design.html"}
+{"type":"server-stopped","reason":"idle timeout"}

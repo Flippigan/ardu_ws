@@ -1,0 +1,66 @@
+# Exact snapshot of every repo in ardu_ws/src as of 2026-10-08.
+# Each repo is pinned to a commit hash. Where the snapshot included local/uncommitted
+# work, that commit lives on a branch named share/2026-10-08 in the Flippigan fork.
+#
+# Import with:  vcs import --recursive src < workspace.repos
+repositories:
+  src/apriltag_msgs:
+    type: git
+    url: https://github.com/christianrauch/apriltag_msgs.git
+    version: 84bd66c0120f340365437929d564ef390513387d   # tag 2.0.1
+  src/apriltag_ros:
+    type: git
+    url: https://github.com/christianrauch/apriltag_ros.git
+    version: b17b0e7ae8c2471bbb86c66ff06703d2638a7ebd   # tag 3.3.0
+  src/ardupilot:
+    type: git
+    url: https://github.com/Flippigan/ardupilot.git
+    version: 36d68a975b96d4c61d6a72333afc354f02e96cb9   # share/2026-10-08 (upstream aef8f9d4dd + Tools/ros2/COLCON_IGNORE removed)
+  src/ardupilot_gazebo:
+    type: git
+    url: https://github.com/Flippigan/ardupilot_gazebo.git
+    version: 37edf09922f5475b2f0a3d4bad94370bc63c3fe9   # share/2026-10-08
+  src/ardupilot_gz:
+    type: git
+    url: https://github.com/Flippigan/ardupilot_gz.git
+    version: 5486938440c3c4f20b6381ea99b20348a08ec6ec   # share/2026-10-08
+  src/ardupilot_sitl_models:
+    type: git
+    url: https://github.com/Flippigan/SITL_Models.git
+    version: d5d6017367a509b77886379c91207edc66f77652   # main
+  src/dbvf_autonomy:
+    type: git
+    url: https://github.com/Flippigan/dbvf_autonomy.git
+    version: cbf0810455ac5fad9546ede73b5da4b960145d3f   # share/2026-10-08 (PRIVATE repo)
+  src/dbvf_msgs:
+    type: git
+    url: https://github.com/Flippigan/dbvf_msgs.git
+    version: 03b05236ae1df5acfd4d5d8f7458ba7ae5ee7dc7   # share/2026-10-08
+  src/formation_control:
+    type: git
+    url: https://github.com/Flippigan/Arducopter-Control-Projects.git
+    version: da590f6e0dd893017269464e7b9255566091f8ab   # share/2026-10-08 (contains circle_detector)
+  src/formation_msgs:
+    type: git
+    url: https://github.com/Flippigan/formation_msgs.git
+    version: 43def72b64258a8f8c6c47e0bc7f23f9db8d8572   # main (PRIVATE repo)
+  src/micro_ros_agent:
+    type: git
+    url: https://github.com/Flippigan/micro-ROS-Agent.git
+    version: 30377bbd86ff7ea93ca69a3b37997fd235385e1f   # humble
+  src/Micro-XRCE-DDS-Gen:
+    type: git
+    url: https://github.com/Flippigan/Micro-XRCE-DDS-Gen.git
+    version: 348cb46a62b0ad881e4525227368633e540cfe51   # share/2026-10-08
+  src/ros_gz:
+    type: git
+    url: https://github.com/Flippigan/ros_gz.git
+    version: 7075aa51934c0cf0f9f04062f8643c6f8b701fea   # humble
+  src/sdformat_urdf:
+    type: git
+    url: https://github.com/Flippigan/sdformat_urdf.git
+    version: 4be22a54e48562323f3e9deecbe1bde894eb7508   # humble
+  src/swarm-skybrush-server:
+    type: git
+    url: https://github.com/Flippigan/swarm-skybrush-server.git
+    version: a22a87d6ad80ac8d62e001eabd90245aa3f9917d   # share/2026-10-08

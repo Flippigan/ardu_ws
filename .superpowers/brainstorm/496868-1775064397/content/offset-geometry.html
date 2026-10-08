@@ -1,0 +1,90 @@
+<h2>Camera-to-Mechanism Offset Geometry</h2>
+<p class="subtitle">Top-down view of the drone — which layout matches your hardware?</p>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">Current Coordinate Frame</div>
+    <div class="mockup-body" style="padding: 20px; text-align: center;">
+      <svg viewBox="0 0 300 300" width="280" height="280" style="margin: 0 auto; display: block;">
+        <!-- Drone body -->
+        <rect x="75" y="75" width="150" height="150" rx="15" fill="#1a1a2e" stroke="#4a9eff" stroke-width="2"/>
+
+        <!-- Arms -->
+        <line x1="75" y1="75" x2="30" y2="30" stroke="#4a9eff" stroke-width="3"/>
+        <line x1="225" y1="75" x2="270" y2="30" stroke="#4a9eff" stroke-width="3"/>
+        <line x1="75" y1="225" x2="30" y2="270" stroke="#4a9eff" stroke-width="3"/>
+        <line x1="225" y1="225" x2="270" y2="270" stroke="#4a9eff" stroke-width="3"/>
+
+        <!-- Props -->
+        <circle cx="30" cy="30" r="20" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="270" cy="30" r="20" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="30" cy="270" r="20" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="270" cy="270" r="20" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- Forward arrow -->
+        <line x1="150" y1="60" x2="150" y2="15" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="170" y="25" fill="#ff6b6b" font-size="13" font-weight="bold">FORWARD (+X)</text>
+
+        <!-- Right arrow -->
+        <line x1="240" y1="150" x2="285" y2="150" stroke="#51cf66" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+        <text x="245" y="140" fill="#51cf66" font-size="13" font-weight="bold">RIGHT (+Y)</text>
+
+        <!-- Camera (center) -->
+        <circle cx="150" cy="150" r="14" fill="#4a9eff" stroke="white" stroke-width="2"/>
+        <text x="150" y="155" fill="white" font-size="11" text-anchor="middle" font-weight="bold">CAM</text>
+
+        <!-- Mechanism (example offset: forward-right) -->
+        <rect x="170" y="100" width="36" height="36" rx="5" fill="#ffd43b" stroke="white" stroke-width="2"/>
+        <text x="188" y="123" fill="#1a1a2e" font-size="9" text-anchor="middle" font-weight="bold">MECH</text>
+
+        <!-- Offset arrows -->
+        <line x1="150" y1="145" x2="150" y2="118" stroke="#ffd43b" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowYellow)"/>
+        <text x="118" y="133" fill="#ffd43b" font-size="10" font-weight="bold">fwd</text>
+
+        <line x1="155" y1="118" x2="175" y2="118" stroke="#ffd43b" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowYellow)"/>
+        <text x="158" y="112" fill="#ffd43b" font-size="10" font-weight="bold">right</text>
+
+        <!-- Arrow markers -->
+        <defs>
+          <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#ff6b6b"/>
+          </marker>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#51cf66"/>
+          </marker>
+          <marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#ffd43b"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">What You Need to Measure</div>
+    <div class="mockup-body" style="padding: 20px;">
+      <div style="margin-bottom: 16px;">
+        <div class="label" style="color: #4a9eff;">BLUE = Camera (downward-facing)</div>
+        <div class="label" style="color: #ffd43b;">YELLOW = Reload Mechanism</div>
+      </div>
+      <div style="background: #1a1a2e; border-radius: 8px; padding: 16px; margin-bottom: 12px;">
+        <h3 style="margin-top:0; color: #ffd43b;">offset_forward</h3>
+        <p style="margin:0; color: #ccc;">Distance from camera to mechanism along the drone's forward axis (positive = mechanism is ahead of camera)</p>
+      </div>
+      <div style="background: #1a1a2e; border-radius: 8px; padding: 16px; margin-bottom: 12px;">
+        <h3 style="margin-top:0; color: #ffd43b;">offset_right</h3>
+        <p style="margin:0; color: #ccc;">Distance from camera to mechanism along the drone's right axis (positive = mechanism is right of camera)</p>
+      </div>
+      <div style="background: #1a1a2e; border-radius: 8px; padding: 16px;">
+        <h3 style="margin-top:0; color: #aaa;">Units</h3>
+        <p style="margin:0; color: #ccc;">Metres. The PID servo works in body-frame metres from the tag position estimate.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px; background: #1a1a2e; border-radius: 8px; padding: 20px;">
+  <h3 style="margin-top: 0;">How the existing offset works</h3>
+  <p>During <code>DESCEND_OFFSET</code>, the PID error becomes: <code>error = tag_position - offset</code>. So the drone centres the <strong>mechanism</strong> (not the camera) over the tag. Once the error is within <code>offset_tolerance</code>, it transitions to <code>DESCEND_FINAL</code> and descends to land.</p>
+  <p style="color: #ffd43b;">Currently both offsets are hardcoded to 0.0 in <code>sim_params.yaml</code> — camera and mechanism are treated as co-located.</p>
+</div>

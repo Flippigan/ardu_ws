@@ -1,0 +1,111 @@
+<h2>DBVF Competition Course Layout — Revised</h2>
+<p class="subtitle">WA and WM corrected: same E-W distance from H, 30ft apart N-S</p>
+
+<div class="section">
+  <div class="label">Course Layout (Top-Down View) — North is Up, East is Right</div>
+  <div style="background: #1a1a2e; border-radius: 12px; padding: 30px; overflow-x: auto;">
+    <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 900px;">
+      <!-- Background field -->
+      <rect x="20" y="50" width="860" height="420" rx="8" fill="#2d4a2d" opacity="0.3" stroke="#4a7a4a" stroke-width="1"/>
+
+      <!-- Compass -->
+      <text x="850" y="80" text-anchor="middle" fill="#888" font-size="12" font-weight="bold">N</text>
+      <polygon points="850,85 845,95 855,95" fill="#888"/>
+      <text x="870" y="100" fill="#666" font-size="10">E →</text>
+
+      <!-- Main axis line (dashed) - through H, WA/WM midpoint, L, F1, F2 -->
+      <line x1="80" y1="270" x2="780" y2="270" stroke="#888" stroke-width="1.5" stroke-dasharray="8,4"/>
+
+      <!-- ==================== H (Home) - rightmost ==================== -->
+      <rect x="755" y="245" width="50" height="50" fill="#2c3e50" opacity="0.8" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="780" y="238" text-anchor="middle" fill="#ecf0f1" font-size="16" font-weight="bold">H</text>
+      <text x="780" y="310" text-anchor="middle" fill="#aaa" font-size="10">Home</text>
+      <!-- Drone start -->
+      <polygon points="780,270 790,260 790,280" fill="#e74c3c" stroke="#fff" stroke-width="1"/>
+      <text x="808" y="274" fill="#e74c3c" font-size="9" font-weight="bold">START</text>
+
+      <!-- ======= Distance H to WA/WM (150ft E-W) ======= -->
+      <line x1="615" y1="375" x2="755" y2="375" stroke="#666" stroke-width="1"/>
+      <line x1="615" y1="370" x2="615" y2="380" stroke="#666" stroke-width="1"/>
+      <line x1="755" y1="370" x2="755" y2="380" stroke="#666" stroke-width="1"/>
+      <text x="685" y="392" text-anchor="middle" fill="#888" font-size="11">150 ft (E-W)</text>
+
+      <!-- ==================== WM (Water Manual) - above center line ==================== -->
+      <rect x="575" y="205" width="60" height="60" fill="#3498db" opacity="0.6" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="605" y="198" text-anchor="middle" fill="#3498db" font-size="16" font-weight="bold">WM</text>
+      <text x="605" y="195" text-anchor="middle" fill="#aaa" font-size="9"></text>
+
+      <!-- ==================== WA (Water Autonomous) - below center line ==================== -->
+      <rect x="575" y="295" width="60" height="60" fill="#f39c12" opacity="0.7" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="605" y="370" text-anchor="middle" fill="#f39c12" font-size="16" font-weight="bold">WA</text>
+
+      <!-- 30ft N-S between WA and WM -->
+      <line x1="645" y1="265" x2="645" y2="295" stroke="#aaa" stroke-width="1"/>
+      <line x1="640" y1="265" x2="650" y2="265" stroke="#aaa" stroke-width="1"/>
+      <line x1="640" y1="295" x2="650" y2="295" stroke="#aaa" stroke-width="1"/>
+      <text x="670" y="283" fill="#ccc" font-size="10">30 ft (N-S)</text>
+
+      <!-- Both 20x20 labels -->
+      <text x="555" y="240" text-anchor="end" fill="#aaa" font-size="9">20x20 ft</text>
+      <text x="555" y="330" text-anchor="end" fill="#aaa" font-size="9">20x20 ft</text>
+
+      <!-- ======= Distance WA/WM to L — UNKNOWN, need to confirm ======= -->
+      <line x1="430" y1="375" x2="575" y2="375" stroke="#f1c40f" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="430" y1="370" x2="430" y2="380" stroke="#f1c40f" stroke-width="1"/>
+      <line x1="575" y1="370" x2="575" y2="380" stroke="#f1c40f" stroke-width="1"/>
+      <text x="502" y="392" text-anchor="middle" fill="#f1c40f" font-size="11">? ft</text>
+
+      <!-- ==================== L (Landing, 15x15ft) ==================== -->
+      <rect x="405" y="243" width="50" height="50" fill="#2ecc71" opacity="0.8" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="430" y="235" text-anchor="middle" fill="#2ecc71" font-size="16" font-weight="bold">L</text>
+      <text x="430" y="308" text-anchor="middle" fill="#aaa" font-size="10">15x15 ft</text>
+
+      <!-- ======= Distance L to F1 ======= -->
+      <line x1="290" y1="320" x2="405" y2="320" stroke="#666" stroke-width="1"/>
+      <line x1="290" y1="315" x2="290" y2="325" stroke="#666" stroke-width="1"/>
+      <line x1="405" y1="315" x2="405" y2="325" stroke="#666" stroke-width="1"/>
+      <text x="347" y="337" text-anchor="middle" fill="#888" font-size="11">100 ft</text>
+
+      <!-- ==================== F1 (7x7ft) ==================== -->
+      <rect x="268" y="248" width="40" height="40" fill="#e74c3c" opacity="0.8" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="288" y="240" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">F1</text>
+      <text x="288" y="303" text-anchor="middle" fill="#aaa" font-size="10">7x7 ft</text>
+
+      <!-- ======= Distance F1 to F2 ======= -->
+      <line x1="155" y1="320" x2="268" y2="320" stroke="#666" stroke-width="1"/>
+      <line x1="155" y1="315" x2="155" y2="325" stroke="#666" stroke-width="1"/>
+      <line x1="268" y1="315" x2="268" y2="325" stroke="#666" stroke-width="1"/>
+      <text x="211" y="337" text-anchor="middle" fill="#888" font-size="11">100 ft</text>
+
+      <!-- ==================== F2 (3x3ft) ==================== -->
+      <rect x="140" y="255" width="28" height="28" fill="#e74c3c" opacity="0.8" stroke="#fff" stroke-width="2" rx="2"/>
+      <text x="154" y="248" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">F2</text>
+      <text x="154" y="298" text-anchor="middle" fill="#aaa" font-size="10">3x3 ft</text>
+
+      <!-- ==================== Ground Zones (offset North) ==================== -->
+      <rect x="460" y="110" width="35" height="35" fill="#95a5a6" opacity="0.5" stroke="#fff" stroke-width="1.5" rx="2"/>
+      <text x="478" y="105" text-anchor="middle" fill="#bdc3c7" font-size="13" font-weight="bold">1</text>
+      <line x1="478" y1="148" x2="478" y2="205" stroke="#666" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="490" y="180" fill="#888" font-size="9">100 ft</text>
+
+      <rect x="340" y="110" width="35" height="35" fill="#95a5a6" opacity="0.5" stroke="#fff" stroke-width="1.5" rx="2"/>
+      <text x="358" y="105" text-anchor="middle" fill="#bdc3c7" font-size="13" font-weight="bold">2</text>
+      <line x1="375" y1="128" x2="460" y2="128" stroke="#666" stroke-width="1"/>
+      <text x="418" y="122" fill="#888" font-size="9">100 ft</text>
+
+      <!-- Legend box -->
+      <rect x="40" y="410" width="250" height="50" rx="4" fill="#111" opacity="0.6"/>
+      <text x="55" y="430" fill="#f1c40f" font-size="11">? = Need to confirm this distance</text>
+      <text x="55" y="448" fill="#888" font-size="11">All other distances from RFP Figure 3</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 16px;">
+  <div class="label">What Changed</div>
+  <ul style="color: #ccc; font-size: 13px; line-height: 1.8;">
+    <li><strong style="color: #3498db;">WM</strong> and <strong style="color: #f39c12;">WA</strong> are now at the <strong>same E-W position</strong>, both 150ft from H</li>
+    <li>They are stacked <strong>30ft apart in the N-S direction</strong> (WM north, WA south — confirm?)</li>
+    <li>The distance from WA/WM to L is now <strong style="color: #f1c40f;">unknown</strong> — what is it?</li>
+  </ul>
+</div>

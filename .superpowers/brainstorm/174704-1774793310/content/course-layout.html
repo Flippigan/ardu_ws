@@ -1,0 +1,124 @@
+<h2>DBVF Competition Course Layout</h2>
+<p class="subtitle">Verify this matches your understanding of the course from the RFP (Figure 3, p.23)</p>
+
+<div class="section">
+<svg viewBox="0 0 900 400" style="width:100%;max-width:900px;background:#1a1a2e;border-radius:12px;padding:20px;margin:0 auto;display:block">
+  <!-- Ground -->
+  <rect x="0" y="300" width="900" height="100" fill="#2d5016" opacity="0.3"/>
+
+  <!-- Dashed flight path line -->
+  <line x1="780" y1="200" x2="580" y2="200" stroke="#555" stroke-dasharray="8,4" stroke-width="2"/>
+  <line x1="580" y1="200" x2="480" y2="200" stroke="#555" stroke-dasharray="8,4" stroke-width="2"/>
+  <line x1="480" y1="200" x2="370" y2="200" stroke="#555" stroke-dasharray="8,4" stroke-width="2"/>
+  <line x1="370" y1="200" x2="230" y2="200" stroke="#555" stroke-dasharray="8,4" stroke-width="2"/>
+  <line x1="230" y1="200" x2="100" y2="200" stroke="#555" stroke-dasharray="8,4" stroke-width="2"/>
+
+  <!-- Distance labels -->
+  <text x="680" y="185" fill="#888" font-size="11" text-anchor="middle">150ft</text>
+  <text x="530" y="185" fill="#888" font-size="11" text-anchor="middle">150ft</text>
+  <text x="425" y="185" fill="#888" font-size="11" text-anchor="middle">30ft</text>
+  <text x="300" y="185" fill="#888" font-size="11" text-anchor="middle">100ft</text>
+  <text x="165" y="185" fill="#888" font-size="11" text-anchor="middle">100ft</text>
+
+  <!-- H (Home) - Green -->
+  <rect x="745" y="240" width="70" height="70" fill="none" stroke="#4ade80" stroke-width="3" rx="4"/>
+  <text x="780" y="282" fill="#4ade80" font-size="24" font-weight="bold" text-anchor="middle">H</text>
+  <text x="780" y="330" fill="#4ade80" font-size="11" text-anchor="middle">Home 15x15ft</text>
+  <text x="780" y="344" fill="#6b7280" font-size="10" text-anchor="middle">Start/End</text>
+
+  <!-- WA (Water Autonomous) - Blue -->
+  <rect x="545" y="240" width="70" height="70" fill="none" stroke="#60a5fa" stroke-width="3" rx="4"/>
+  <text x="580" y="282" fill="#60a5fa" font-size="20" font-weight="bold" text-anchor="middle">WA</text>
+  <text x="580" y="330" fill="#60a5fa" font-size="11" text-anchor="middle">Water Auto 20x20ft</text>
+  <text x="580" y="344" fill="#eab308" font-size="10" text-anchor="middle">Yellow payloads + AprilTag</text>
+
+  <!-- WM (Water Manual) - Cyan -->
+  <rect x="445" y="240" width="70" height="70" fill="none" stroke="#22d3ee" stroke-width="3" rx="4"/>
+  <text x="480" y="282" fill="#22d3ee" font-size="20" font-weight="bold" text-anchor="middle">WM</text>
+  <text x="480" y="330" fill="#22d3ee" font-size="11" text-anchor="middle">Water Manual 20x20ft</text>
+  <text x="480" y="344" fill="#3b82f6" font-size="10" text-anchor="middle">Blue payloads (unlimited)</text>
+
+  <!-- L (Land) - White -->
+  <rect x="335" y="240" width="70" height="70" fill="none" stroke="#e5e7eb" stroke-width="3" rx="4"/>
+  <text x="370" y="282" fill="#e5e7eb" font-size="24" font-weight="bold" text-anchor="middle">L</text>
+  <text x="370" y="330" fill="#e5e7eb" font-size="11" text-anchor="middle">Land 15x15ft</text>
+  <text x="370" y="344" fill="#f97316" font-size="10" text-anchor="middle">Flagger stationed here</text>
+
+  <!-- F1 (Fire 1) - Red -->
+  <rect x="201" y="252" width="55" height="55" fill="none" stroke="#ef4444" stroke-width="3" rx="4"/>
+  <text x="228" y="286" fill="#ef4444" font-size="20" font-weight="bold" text-anchor="middle">F1</text>
+  <text x="228" y="330" fill="#ef4444" font-size="11" text-anchor="middle">Fire 1 (7x7ft)</text>
+  <text x="228" y="344" fill="#6b7280" font-size="10" text-anchor="middle">+2.5pts/payload</text>
+
+  <!-- F2 (Fire 2) - Orange -->
+  <rect x="75" y="260" width="45" height="45" fill="none" stroke="#f97316" stroke-width="3" rx="4"/>
+  <text x="97" y="289" fill="#f97316" font-size="20" font-weight="bold" text-anchor="middle">F2</text>
+  <text x="97" y="330" fill="#f97316" font-size="11" text-anchor="middle">Fire 2 (3x3ft)</text>
+  <text x="97" y="344" fill="#6b7280" font-size="10" text-anchor="middle">+5pts/payload</text>
+
+  <!-- Altitude line -->
+  <line x1="30" y1="200" x2="870" y2="200" stroke="#374151" stroke-dasharray="4,8" stroke-width="1"/>
+  <text x="870" y="196" fill="#6b7280" font-size="10" text-anchor="end">30ft AGL (min transit alt)</text>
+
+  <!-- Title -->
+  <text x="450" y="30" fill="#e5e7eb" font-size="16" font-weight="bold" text-anchor="middle">Course Layout (Not to Scale)</text>
+  <text x="450" y="50" fill="#6b7280" font-size="12" text-anchor="middle">Linear arrangement: F2 ← F1 ← L ← WM ← WA ← H</text>
+
+  <!-- Legend -->
+  <rect x="30" y="60" width="12" height="12" fill="#ef4444" rx="2"/>
+  <text x="48" y="71" fill="#d1d5db" font-size="11">Red payloads (FM-2 drop)</text>
+  <rect x="30" y="80" width="12" height="12" fill="#eab308" rx="2"/>
+  <text x="48" y="91" fill="#d1d5db" font-size="11">Yellow payloads (FM-3 pickup from WA for autonomy)</text>
+  <rect x="30" y="100" width="12" height="12" fill="#3b82f6" rx="2"/>
+  <text x="48" y="111" fill="#d1d5db" font-size="11">Blue payloads (FM-3 pickup from WM, no autonomy bonus)</text>
+
+  <!-- Flight path arrows -->
+  <text x="450" y="145" fill="#9ca3af" font-size="12" text-anchor="middle">GPS coords provided day-of competition; L and ground zones may move</text>
+</svg>
+</div>
+
+<div class="section" style="margin-top:24px">
+<h3>Key Rules Affecting Autonomy Design</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+  <div style="background:#1e293b;padding:16px;border-radius:8px;border-left:3px solid #4ade80;">
+    <strong style="color:#4ade80;">FM-1: Takeoff & Land</strong>
+    <ul style="margin:8px 0 0;padding-left:16px;color:#d1d5db;font-size:13px;">
+      <li>Takeoff from H to 30ft AGL</li>
+      <li>Transit to L, land vertically</li>
+      <li>Flagger raises flag = approved</li>
+      <li>+20pts landing, +30pts if autonomous</li>
+      <li>Human re-arm at L is allowed</li>
+    </ul>
+  </div>
+  <div style="background:#1e293b;padding:16px;border-radius:8px;border-left:3px solid #ef4444;">
+    <strong style="color:#ef4444;">FM-2: Drop Payloads (Red)</strong>
+    <ul style="margin:8px 0 0;padding-left:16px;color:#d1d5db;font-size:13px;">
+      <li>Takeoff from L to 30ft AGL</li>
+      <li>Transit to F1 or F2</li>
+      <li>Drop red payloads (min 15ft AGL)</li>
+      <li>x2 multiplier if fully autonomous</li>
+      <li>+20pts bonus if no manual trigger</li>
+    </ul>
+  </div>
+  <div style="background:#1e293b;padding:16px;border-radius:8px;border-left:3px solid #eab308;">
+    <strong style="color:#eab308;">FM-3: Pickup & Re-drop</strong>
+    <ul style="margin:8px 0 0;padding-left:16px;color:#d1d5db;font-size:13px;">
+      <li>Transit to WA (yellow) or WM (blue)</li>
+      <li>Land/descend to pick up payloads</li>
+      <li>Transit to F1 or F2, drop again</li>
+      <li>x3 multiplier if from WA + autonomous</li>
+      <li>+50pts bonus if no manual intervention</li>
+      <li>Unlimited cycles from WM</li>
+    </ul>
+  </div>
+  <div style="background:#1e293b;padding:16px;border-radius:8px;border-left:3px solid #9333ea;">
+    <strong style="color:#9333ea;">End: Return Home</strong>
+    <ul style="margin:8px 0 0;padding-left:16px;color:#d1d5db;font-size:13px;">
+      <li>Must land at H vertically before timer</li>
+      <li>-20pts if doesn't land at H in time</li>
+      <li>-20pts each ground contact outside L/WA/WM/H</li>
+      <li>10 minute total timer</li>
+    </ul>
+  </div>
+</div>
+</div>

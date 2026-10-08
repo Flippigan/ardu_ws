@@ -1,0 +1,149 @@
+<h2>DBVF Course Layout — Corrected Orientation</h2>
+<p class="subtitle">Course runs East (+X) from Home. Per-zone Z from mesh surface.</p>
+
+<div class="section">
+  <h3>Top-Down View (ENU Frame)</h3>
+  <div style="background: #1a2a1a; border-radius: 12px; padding: 30px; overflow-x: auto;">
+    <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:900px; height:auto;">
+      <!-- Background -->
+      <rect x="0" y="0" width="900" height="420" fill="#2d4a2d" rx="8"/>
+
+      <!-- Mesh outline (approximate) -->
+      <rect x="55" y="150" width="800" height="140" fill="#253525" stroke="#3a5a3a" stroke-width="1" stroke-dasharray="6,4" rx="4"/>
+      <text x="455" y="168" text-anchor="middle" fill="#3a5a3a" font-size="10">Photogrammetry Mesh (~160m East from origin)</text>
+
+      <!-- Main east-west axis line -->
+      <line x1="40" y1="220" x2="870" y2="220" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8,6"/>
+
+      <!-- === ZONES (left to right = West to East = +X) === -->
+
+      <!-- H (Home) at origin — leftmost -->
+      <rect x="60" y="200" width="40" height="40" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="80" y="225" text-anchor="middle" fill="white" font-size="16" font-weight="bold">H</text>
+      <text x="80" y="255" text-anchor="middle" fill="#aaa" font-size="9">15×15 ft</text>
+      <text x="80" y="267" text-anchor="middle" fill="#888" font-size="8">X=0, Z=0.00</text>
+
+      <!-- Distance H to WA/WM: 150ft -->
+      <line x1="100" y1="235" x2="230" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="165" y="250" text-anchor="middle" fill="#ffaa00" font-size="10">150 ft (45.7m)</text>
+
+      <!-- WM - 15ft north of axis at X=45.7 -->
+      <rect x="230" y="155" width="50" height="50" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="255" y="185" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">WM</text>
+      <text x="305" y="185" text-anchor="start" fill="#aaa" font-size="8">20×20</text>
+      <text x="255" y="148" text-anchor="middle" fill="#66bbff" font-size="9">Blue Pickup</text>
+
+      <!-- WA - 15ft south of axis at X=45.7 -->
+      <rect x="230" y="235" width="50" height="50" fill="none" stroke="#ffffff" stroke-width="2" rx="3"/>
+      <text x="255" y="265" text-anchor="middle" fill="white" font-size="14" font-weight="bold">WA</text>
+      <text x="305" y="265" text-anchor="start" fill="#aaa" font-size="8">20×20</text>
+      <text x="255" y="298" text-anchor="middle" fill="#ffdd00" font-size="9">Yellow Pickup</text>
+
+      <!-- Bracket for 30ft -->
+      <line x1="222" y1="205" x2="222" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <line x1="217" y1="205" x2="227" y2="205" stroke="#ffaa00" stroke-width="1.5"/>
+      <line x1="217" y1="235" x2="227" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="210" y="223" text-anchor="end" fill="#ffaa00" font-size="9">30ft</text>
+
+      <!-- Midpoint on axis -->
+      <circle cx="255" cy="220" r="3" fill="#ffaa00"/>
+
+      <!-- Z annotation for WA/WM -->
+      <text x="255" y="315" text-anchor="middle" fill="#888" font-size="8">X=+45.7, Z=+1.27</text>
+
+      <!-- AprilTag indicator on WA -->
+      <rect x="248" y="255" width="14" height="14" fill="#ffdd0033" stroke="#ffdd00" stroke-width="1" rx="1"/>
+      <text x="255" y="264" text-anchor="middle" fill="#ffdd00" font-size="7">AT</text>
+
+      <!-- Distance WA/WM to L: 150ft -->
+      <line x1="280" y1="235" x2="430" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="355" y="250" text-anchor="middle" fill="#ffaa00" font-size="10">150 ft (45.7m)</text>
+
+      <!-- L (Landing) -->
+      <rect x="430" y="200" width="40" height="40" fill="none" stroke="#4488ff" stroke-width="3" rx="3"/>
+      <text x="450" y="225" text-anchor="middle" fill="#4488ff" font-size="16" font-weight="bold">L</text>
+      <text x="450" y="255" text-anchor="middle" fill="#aaa" font-size="9">15×15 ft</text>
+      <text x="450" y="267" text-anchor="middle" fill="#888" font-size="8">X=+91.4, Z=+0.92</text>
+
+      <!-- Distance L to F1: 100ft -->
+      <line x1="470" y1="235" x2="580" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="525" y="250" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft (30.5m)</text>
+
+      <!-- F1 -->
+      <rect x="580" y="205" width="33" height="33" fill="none" stroke="#44cc44" stroke-width="2" rx="3"/>
+      <text x="596" y="226" text-anchor="middle" fill="#44cc44" font-size="14" font-weight="bold">F1</text>
+      <text x="596" y="252" text-anchor="middle" fill="#aaa" font-size="9">7×7 ft</text>
+      <text x="596" y="264" text-anchor="middle" fill="#888" font-size="8">X=+121.9, Z=-0.06</text>
+
+      <!-- Distance F1 to F2: 100ft -->
+      <line x1="613" y1="235" x2="730" y2="235" stroke="#ffaa00" stroke-width="1.5"/>
+      <text x="671" y="250" text-anchor="middle" fill="#ffaa00" font-size="10">100 ft (30.5m)</text>
+
+      <!-- F2 -->
+      <rect x="730" y="213" width="15" height="15" fill="none" stroke="#ff4444" stroke-width="2" rx="2"/>
+      <text x="737" y="224" text-anchor="middle" fill="#ff4444" font-size="10" font-weight="bold">F2</text>
+      <text x="737" y="243" text-anchor="middle" fill="#aaa" font-size="9">3×3 ft</text>
+      <text x="737" y="255" text-anchor="middle" fill="#888" font-size="8">X=+152.4, Z=-1.42</text>
+
+      <!-- Axis labels -->
+      <text x="450" y="370" text-anchor="middle" fill="#ffffff66" font-size="12" font-style="italic">← West (origin) · · · +X East · · · (course end) →</text>
+      <text x="450" y="390" text-anchor="middle" fill="#ffffff44" font-size="11">Total: ~600 ft (~183 m) | Drone starts at H (origin)</text>
+
+      <!-- North arrow -->
+      <g transform="translate(850, 40)">
+        <line x1="0" y1="20" x2="0" y2="-15" stroke="white" stroke-width="2"/>
+        <polygon points="-5,0 0,-15 5,0" fill="white"/>
+        <text x="0" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">N</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Elevation Profile Along Course</h3>
+  <div style="background: #1a2a1a; border-radius: 12px; padding: 20px;">
+    <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:800px; height:auto;">
+      <rect x="0" y="0" width="800" height="200" fill="#1a2a1a" rx="4"/>
+
+      <!-- Axes -->
+      <line x1="60" y1="30" x2="60" y2="170" stroke="#555" stroke-width="1"/>
+      <line x1="60" y1="100" x2="760" y2="100" stroke="#555" stroke-width="1" stroke-dasharray="4,4"/>
+
+      <!-- Y-axis labels (Z elevation) -->
+      <text x="55" y="40" text-anchor="end" fill="#888" font-size="10">+1.5m</text>
+      <text x="55" y="105" text-anchor="end" fill="#888" font-size="10">0.0m</text>
+      <text x="55" y="170" text-anchor="end" fill="#888" font-size="10">-1.5m</text>
+
+      <!-- Elevation profile line -->
+      <!-- H:0.00  WA:+1.27  L:+0.92  F1:-0.06  F2:-1.42 -->
+      <!-- Scale: 100px per zone spacing, Z scaled by 46.7px/m -->
+      <polyline points="100,100 280,41 470,57 600,103 740,166"
+        fill="none" stroke="#4488ff" stroke-width="2.5"/>
+
+      <!-- Zone markers on profile -->
+      <circle cx="100" cy="100" r="6" fill="#ffffff" stroke="#1a2a1a" stroke-width="2"/>
+      <text x="100" y="88" text-anchor="middle" fill="white" font-size="10" font-weight="bold">H</text>
+      <text x="100" y="120" text-anchor="middle" fill="#888" font-size="9">0.00m</text>
+
+      <circle cx="280" cy="41" r="6" fill="#ffdd00" stroke="#1a2a1a" stroke-width="2"/>
+      <text x="280" y="29" text-anchor="middle" fill="#ffdd00" font-size="10" font-weight="bold">WA/WM</text>
+      <text x="280" y="58" text-anchor="middle" fill="#888" font-size="9">+1.27m</text>
+
+      <circle cx="470" cy="57" r="6" fill="#4488ff" stroke="#1a2a1a" stroke-width="2"/>
+      <text x="470" y="45" text-anchor="middle" fill="#4488ff" font-size="10" font-weight="bold">L</text>
+      <text x="470" y="74" text-anchor="middle" fill="#888" font-size="9">+0.92m</text>
+
+      <circle cx="600" cy="103" r="6" fill="#44cc44" stroke="#1a2a1a" stroke-width="2"/>
+      <text x="600" y="91" text-anchor="middle" fill="#44cc44" font-size="10" font-weight="bold">F1</text>
+      <text x="600" y="120" text-anchor="middle" fill="#888" font-size="9">-0.06m</text>
+
+      <circle cx="740" cy="166" r="6" fill="#ff4444" stroke="#1a2a1a" stroke-width="2"/>
+      <text x="740" y="154" text-anchor="middle" fill="#ff4444" font-size="10" font-weight="bold">F2</text>
+      <text x="740" y="183" text-anchor="middle" fill="#888" font-size="9">-1.42m</text>
+
+      <!-- X-axis label -->
+      <text x="400" y="198" text-anchor="middle" fill="#666" font-size="10">Distance along course (+X East)</text>
+    </svg>
+  </div>
+  <p style="color:#999; margin-top:10px; font-size:13px;">Elevation varies ~2.7m across the course. Each zone model will be placed at its mesh surface Z to sit flush on the terrain.</p>
+</div>
