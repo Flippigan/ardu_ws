@@ -31,7 +31,7 @@ repositories:
   src/dbvf_autonomy:
     type: git
     url: https://github.com/Flippigan/dbvf_autonomy.git
-    version: cbf0810455ac5fad9546ede73b5da4b960145d3f   # share/2026-10-08 (PRIVATE repo)
+    version: cbf0810455ac5fad9546ede73b5da4b960145d3f   # share/2026-10-08
   src/dbvf_msgs:
     type: git
     url: https://github.com/Flippigan/dbvf_msgs.git
@@ -40,10 +40,6 @@ repositories:
     type: git
     url: https://github.com/Flippigan/Arducopter-Control-Projects.git
     version: da590f6e0dd893017269464e7b9255566091f8ab   # share/2026-10-08 (contains circle_detector)
-  src/formation_msgs:
-    type: git
-    url: https://github.com/Flippigan/formation_msgs.git
-    version: 43def72b64258a8f8c6c47e0bc7f23f9db8d8572   # main (PRIVATE repo)
   src/micro_ros_agent:
     type: git
     url: https://github.com/Flippigan/micro-ROS-Agent.git

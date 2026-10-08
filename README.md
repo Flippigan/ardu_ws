@@ -38,8 +38,6 @@ cd ardu_ws
 vcs import --recursive < workspace.repos
 ```
 
-> `dbvf_autonomy` and `formation_msgs` are **private** repos. If you weren't given access, `vcs import` reports an error for those two and continues with the rest. Neither is needed for the sim + circle detector steps below.
-
 ### Fix the hardcoded mesh path
 
 The world file loads the VFS field mesh by absolute path (`/home/finn/...`). If your username isn't `finn`, or you cloned somewhere other than `~/Documents/ardu_ws`, run this:
