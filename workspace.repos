@@ -31,7 +31,7 @@ repositories:
   src/dbvf_autonomy:
     type: git
     url: https://github.com/Flippigan/dbvf_autonomy.git
-    version: cbf0810455ac5fad9546ede73b5da4b960145d3f   # share/2026-10-08
+    version: 0515d1851b3aa2c63ab88deee7cfa798abeb611f   # share/2026-10-08
   src/dbvf_msgs:
     type: git
     url: https://github.com/Flippigan/dbvf_msgs.git
